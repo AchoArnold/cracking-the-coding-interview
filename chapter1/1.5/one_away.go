@@ -21,10 +21,11 @@ func oneAway(inputString1 string, inputString2 string) bool {
 		}
 	}
 
+	invalidFound = false
 	for _, value := range stringAsRune {
 		if value != 0 {
-			if invalidFound {
-				return false
+			if value < -1 || value > 1 || invalidFound {
+				return  false
 			} else {
 				invalidFound = true
 			}

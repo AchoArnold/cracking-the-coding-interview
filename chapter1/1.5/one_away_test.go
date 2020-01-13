@@ -1,7 +1,9 @@
 package main
 
-import "testing"
-import "../../utils/testing_util"
+import (
+	util "github.com/AchoArnold/cracking-the-coding-interview/utils"
+	"testing"
+)
 
 func TestOneAway(t *testing.T) {
 	testData :=[]struct {
@@ -29,16 +31,22 @@ func TestOneAway(t *testing.T) {
 			string2: "bake",
 			expectedResult: false,
 		},
+		{
+			string1: "paless",
+			string2: "pale",
+			expectedResult: false,
+		},
 	}
 
 	for _, data := range testData {
 		t.Run("running tests", func(t *testing.T) {
 			if oneAway(data.string1, data.string2) != data.expectedResult {
 				t.Errorf(
-					"False %s: %s is %sone away",
-					IfThenElse(expectedResult, "negative", "positive"),
-					inputString,
-					IfThenElse(expectedResult, "", "not "),
+					"False %s: \"%s\" and \"%s\" is %sone away",
+					util.IfThenElse(data.expectedResult, "negative", "positive"),
+					data.string1,
+					data.string2,
+					util.IfThenElse(data.expectedResult, "", "not "),
 				)
 			}
 		})
