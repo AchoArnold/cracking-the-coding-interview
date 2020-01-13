@@ -7,35 +7,20 @@ import (
 
 func TestOneAway(t *testing.T) {
 	testData :=[]struct {
-		string1 string
-		string2 string
+		string1, string2 string
 		expectedResult bool
 	}{
-		{
-			string1: "pale",
-			string2: "ple",
-			expectedResult: true,
-		},
-		{
-			string1: "pales",
-			string2: "pale",
-			expectedResult: true,
-		},
-		{
-			string1: "pale",
-			string2: "bale",
-			expectedResult: true,
-		},
-		{
-			string1: "pale",
-			string2: "bake",
-			expectedResult: false,
-		},
-		{
-			string1: "paless",
-			string2: "pale",
-			expectedResult: false,
-		},
+		{"pale", "ple", true,},
+		{"pales", "pale", true,},
+		{"pale", "bale", true,},
+		{"pale", "bake", false,},
+		{"paless", "pale", false,},
+		{"abcd", "abcd", true},
+		{"abcd", "abdc", true},
+		{"abcc", "ccbb", false},
+		{"abcc", "abcc ", true},
+		{" ", " ", true},
+		{"", "", true},
 	}
 
 	for _, data := range testData {
