@@ -16,7 +16,7 @@ func TestRotateMatrix(t *testing.T)  {
 	 for _, testData := range data {
 	 	t.Run("Testing Input Output", func(t *testing.T) {
 			if !reflect.DeepEqual(rotateMatrix(testData.inputMatrix),testData.outputMatrix) {
-				util.handleError(testData.outputMatrix, testData.inputMatrix,t)
+				util.HandleError(testData.outputMatrix, testData.inputMatrix,t)
 			}
 		})
 	 }
@@ -27,7 +27,7 @@ func TestRotateMatrixConstantSpace(t *testing.T)  {
 	for _, testData := range data {
 		t.Run("Testing Input Output", func(t *testing.T) {
 			if !reflect.DeepEqual(rotateMatrixConstantSpace(testData.inputMatrix),testData.outputMatrix) {
-				util.handleError(testData.outputMatrix, testData.inputMatrix,t)
+				util.HandleError(testData.outputMatrix, testData.inputMatrix,t)
 			}
 		})
 	}

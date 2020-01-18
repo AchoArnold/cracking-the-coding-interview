@@ -23,7 +23,7 @@ func PrintMatrixToStdOut(inputMatrix [][]int) {
 	}
 }
 
-func handleError(expectedMatrix [][]int, actualMatrix [][]int, t *testing.T) {
+func HandleError(expectedMatrix [][]int, actualMatrix [][]int, t *testing.T) {
 	t.Errorf(
 		"The matrices below are not equal\n\nExpected matrix:\n\n%s\nActualMatrix:\n\n%s\n",
 		printMatrix(expectedMatrix),
