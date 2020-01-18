@@ -1,6 +1,9 @@
 package util
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 // IfThenElse evaluates a condition, if true returns the first parameter otherwise the second
 func IfThenElse(condition bool, a interface{}, b interface{}) interface{} {
@@ -10,7 +13,7 @@ func IfThenElse(condition bool, a interface{}, b interface{}) interface{} {
 	return b
 }
 
-func PrintMatrix(inputMatrix [][]int) {
+func PrintMatrixToStdOut(inputMatrix [][]int) {
 	for rowIndex := 0; rowIndex < len(inputMatrix); rowIndex++{
 		print("{")
 		for columnIndex := 0; columnIndex < len(inputMatrix[rowIndex]); columnIndex++ {
@@ -18,4 +21,26 @@ func PrintMatrix(inputMatrix [][]int) {
 		}
 		print("}\n")
 	}
+}
+
+func handleError(expectedMatrix [][]int, actualMatrix [][]int, t *testing.T) {
+	t.Errorf(
+		"The matrices below are not equal\n\nExpected matrix:\n\n%s\nActualMatrix:\n\n%s\n",
+		printMatrix(expectedMatrix),
+		printMatrix(actualMatrix),
+	)
+}
+
+func printMatrix(inputMatrix [][]int) string {
+	outputString := ""
+
+	for rowIndex := 0; rowIndex < len(inputMatrix); rowIndex++{
+		outputString += "{"
+		for columnIndex := 0; columnIndex < len(inputMatrix[rowIndex]); columnIndex++ {
+			outputString += fmt.Sprintf("%d,", inputMatrix[rowIndex][columnIndex])
+		}
+		outputString += "}\n"
+	}
+
+	return outputString
 }
