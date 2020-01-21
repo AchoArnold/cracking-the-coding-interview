@@ -7,14 +7,14 @@ import (
 func TestKToLast(t *testing.T) {
 	input := SinglyLinkedList{
 		&Node{
-			data:1,
+			data: 1,
 			next: &Node{
-				data:1,
+				data: 1,
 				next: &Node{
-					data:3,
+					data: 3,
 					next: &Node{
-						data:4,
-						next:nil,
+						data: 4,
+						next: nil,
 					},
 				},
 			},
@@ -23,7 +23,6 @@ func TestKToLast(t *testing.T) {
 
 	k := 1
 	expectedData := 3
-
 
 	t.Run("Testing input output", func(t *testing.T) {
 		if input.kToLast(k) != expectedData {

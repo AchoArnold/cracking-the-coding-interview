@@ -5,10 +5,10 @@ func (linkedList *SinglyLinkedList) kToLast(k int) int {
 
 	data := []int{node.data}
 
-	for node.next != nil  {
+	for node.next != nil {
 		data = append(data, node.next.data)
 		node = node.next
 	}
 
-	return data[len(data) - k -1]
+	return data[len(data)-k-1]
 }

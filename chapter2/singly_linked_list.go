@@ -25,6 +25,11 @@ func (linkedList *SinglyLinkedList) appendToTail(data int) {
 	currentNode.next = &end
 }
 
+func (linkedList *SinglyLinkedList) appendToHead(data int) {
+	head := Node{linkedList.head, data}
+
+	linkedList.head = &head
+}
 
 func (linkedList *SinglyLinkedList) deleteNode(data int) {
 	node := linkedList.head
@@ -46,9 +51,9 @@ func (linkedList *SinglyLinkedList) deleteNode(data int) {
 func (linkedList *SinglyLinkedList) print() string {
 	node := linkedList.head
 
-	outputString := fmt.Sprintf("%d->",node.data)
+	outputString := fmt.Sprintf("%d->", node.data)
 	for node.next != nil {
-		outputString += fmt.Sprintf("%d->",node.next.data)
+		outputString += fmt.Sprintf("%d->", node.next.data)
 		node = node.next
 	}
 
@@ -56,4 +61,3 @@ func (linkedList *SinglyLinkedList) print() string {
 
 	return outputString
 }
-

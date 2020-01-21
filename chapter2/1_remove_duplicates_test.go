@@ -7,12 +7,12 @@ import (
 func TestRemoveDuplicates(t *testing.T) {
 	input := SinglyLinkedList{
 		&Node{
-			data:1,
+			data: 1,
 			next: &Node{
-				data:1,
+				data: 1,
 				next: &Node{
-					data:3,
-					next:nil,
+					data: 3,
+					next: nil,
 				},
 			},
 		},
@@ -20,14 +20,13 @@ func TestRemoveDuplicates(t *testing.T) {
 
 	output := SinglyLinkedList{
 		&Node{
-			data:1,
+			data: 1,
 			next: &Node{
-				data:3,
-				next:nil,
+				data: 3,
+				next: nil,
 			},
 		},
 	}
-
 
 	t.Run("Testing input output", func(t *testing.T) {
 		if input.removeDuplicates().print() != output.print() {
