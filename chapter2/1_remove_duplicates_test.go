@@ -29,11 +29,11 @@ func TestRemoveDuplicates(t *testing.T) {
 	}
 
 	t.Run("Testing input output", func(t *testing.T) {
-		if input.removeDuplicates().print() != output.print() {
+		if input.removeDuplicates().String() != output.String() {
 			t.Errorf(
 				"The 2 lists below are not equal.\nActual Output: %s\nExpected Output: %s\n",
-				input.print(),
-				output.print(),
+				input.String(),
+				output.String(),
 			)
 		}
 	})

@@ -6,8 +6,7 @@ func sumLists(list1 *SinglyLinkedList, list2 *SinglyLinkedList) *SinglyLinkedLis
 	list2CurrentNode := list2.head
 	carry := 0
 
-	for list1CurrentNode != nil && list2CurrentNode != nil {
-		println("Looping")
+	for list1CurrentNode != nil || list2CurrentNode != nil {
 		list1Value, list2Value := 0, 0
 
 		if list1CurrentNode != nil {
@@ -24,7 +23,6 @@ func sumLists(list1 *SinglyLinkedList, list2 *SinglyLinkedList) *SinglyLinkedLis
 			carry = 1
 		}
 
-
 		if (resultList == SinglyLinkedList{}) {
 			resultList = SinglyLinkedList{
 				&Node{
@@ -36,9 +34,18 @@ func sumLists(list1 *SinglyLinkedList, list2 *SinglyLinkedList) *SinglyLinkedLis
 			resultList.appendToHead(sumResult)
 		}
 
-		list1CurrentNode = list1CurrentNode.next
-		list2CurrentNode = list2CurrentNode.next
+		if list1CurrentNode != nil {
+			list1CurrentNode = list1CurrentNode.next
+		}
+
+		if list2CurrentNode != nil {
+			list2CurrentNode = list2CurrentNode.next
+		}
 	}
 
 	return &resultList
+}
+
+func sumListsReverse(list1 *SinglyLinkedList, list2 *SinglyLinkedList) *SinglyLinkedList {
+	return sumLists(list1.Reverse(), list2.Reverse())
 }

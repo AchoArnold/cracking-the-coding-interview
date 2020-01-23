@@ -41,11 +41,11 @@ func TestPartitionMethod(t *testing.T) {
 			}
 
 			if node.data < partition && partitionFound {
-				t.Errorf("Wrong sequence of entries %s", inputList.print())
+				t.Errorf("Wrong sequence of entries %s", inputList.String())
 			}
 
 			if node.data >= partition && !partitionFound {
-				t.Errorf("Wrong sequence of entries %s", inputList.print())
+				t.Errorf("Wrong sequence of entries %s", inputList.String())
 			}
 
 			node = node.next
