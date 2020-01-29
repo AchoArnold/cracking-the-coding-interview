@@ -4,7 +4,6 @@ import (
 	"github.com/stretchr/testify/assert"
 	"strconv"
 	"testing"
-
 )
 
 func TestSlice(t *testing.T) {
@@ -31,7 +30,7 @@ func TestMakeFromSlice(t *testing.T) {
 	}
 
 	for _, slice := range slices {
-		t.Run(strconv.Itoa(len(slice)) + " items slice", func(t *testing.T) {
+		t.Run(strconv.Itoa(len(slice))+" items slice", func(t *testing.T) {
 			assert.Equal(t, makeFromSlice(slice).Slice(), slice)
 		})
 	}
@@ -56,29 +55,29 @@ func TestCount(t *testing.T) {
 }
 
 func TestDeleteNode(t *testing.T) {
-	testData := []struct{
-		name string
-		listData []int
+	testData := []struct {
+		name         string
+		listData     []int
 		dataToDelete int
 		expectedList []int
- 	} {
- 		{
- 			"Deleting head",
- 			[]int{1,2,3},
- 			1,
- 			[]int{2,3},
+	}{
+		{
+			"Deleting head",
+			[]int{1, 2, 3},
+			1,
+			[]int{2, 3},
 		},
 		{
 			"Deleting middle",
-			[]int{1,2,3},
+			[]int{1, 2, 3},
 			2,
-			[]int{1,3},
+			[]int{1, 3},
 		},
 		{
 			"Deleting tail",
-			[]int{1,2},
+			[]int{1, 2},
 			3,
-			[]int{1,2},
+			[]int{1, 2},
 		},
 	}
 

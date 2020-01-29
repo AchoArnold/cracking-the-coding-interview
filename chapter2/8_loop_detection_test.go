@@ -1,9 +1,9 @@
 package chapter2
 
 import (
+	"github.com/stretchr/testify/assert"
 	"strconv"
 	"testing"
-	"github.com/stretchr/testify/assert"
 )
 
 func TestLoopDetection(t *testing.T) {
@@ -28,8 +28,8 @@ func TestLoopDetection(t *testing.T) {
 		},
 	}
 
-	for index, data := range testData  {
-		t.Run("Test Data " + strconv.Itoa(index), func(t *testing.T) {
+	for index, data := range testData {
+		t.Run("Test Data "+strconv.Itoa(index), func(t *testing.T) {
 			assert.Equal(t, data.loopingNode, data.list.GetLoopingNode())
 		})
 	}

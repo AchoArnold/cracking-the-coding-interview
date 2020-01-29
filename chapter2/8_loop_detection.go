@@ -5,7 +5,7 @@ func (linkedList *SinglyLinkedList) GetLoopingNode() *Node {
 
 	node := linkedList.head
 
-	for node != nil  {
+	for node != nil {
 		if _, ok := seenNodes[node]; !ok {
 			seenNodes[node] = true
 		} else {

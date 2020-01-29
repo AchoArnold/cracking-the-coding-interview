@@ -31,7 +31,7 @@ func (linkedList *SinglyLinkedList) appendToHead(data int) {
 	linkedList.head = &head
 }
 
-func (linkedList *SinglyLinkedList) deleteNode(data int) * SinglyLinkedList {
+func (linkedList *SinglyLinkedList) deleteNode(data int) *SinglyLinkedList {
 	node := linkedList.head
 
 	if node.data == data {
