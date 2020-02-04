@@ -33,7 +33,7 @@ func (queue *Queue) IsEmpty() bool {
 
 func (queue *Queue) Remove() (int, error) {
 	if queue.IsEmpty() {
-		return -1, errors.New("cannot remove from an empty stack")
+		return -1, errors.New("cannot remove from an empty queue")
 	}
 
 	data := queue.first.data
@@ -48,7 +48,7 @@ func (queue *Queue) Remove() (int, error) {
 
 func (queue *Queue) peek() (int, error) {
 	if queue.IsEmpty() {
-		return -1, errors.New("cannot peak an empty stack")
+		return -1, errors.New("cannot peak an empty queue")
 	}
 
 	return queue.first.data, nil
