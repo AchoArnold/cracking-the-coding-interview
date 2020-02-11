@@ -40,3 +40,28 @@ func (stack *Stack) Peek() (int, error) {
 
 	return stack.top.data, nil
 }
+
+func (stack *Stack) Empty()  {
+	for {
+		_, err := stack.Pop()
+		if err!= nil {
+			break
+		}
+	}
+}
+
+func (stack *Stack) ToArray() []int {
+	var array []int
+	if stack.IsEmpty() {
+		return array
+	}
+
+	node := stack.top
+
+	for node != nil  {
+		array = append(array, node.data)
+		node = node.next
+	}
+
+	return array
+}
