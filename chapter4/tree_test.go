@@ -1,18 +1,18 @@
 package chapter4
 
 import (
-	"testing"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestDepthFirstSearch(t *testing.T) {
-	expected := []int{1, 2,3,4,5}
+	expected := []int{1, 2, 3, 4, 5}
 
 	tree := &BinaryTreeNode{
 		Value: 3,
-		Left:  &BinaryTreeNode{
+		Left: &BinaryTreeNode{
 			Value: 2,
-			Right:  nil,
+			Right: nil,
 			Left: &BinaryTreeNode{
 				Value: 1,
 				Left:  nil,

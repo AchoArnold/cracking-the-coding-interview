@@ -2,7 +2,7 @@ package chapter4
 
 type BinaryTreeNode struct {
 	Value interface{}
-	Left *BinaryTreeNode
+	Left  *BinaryTreeNode
 	Right *BinaryTreeNode
 }
 

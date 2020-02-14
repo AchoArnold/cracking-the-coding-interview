@@ -2,7 +2,6 @@ package chapter4
 
 import "container/list"
 
-
 func CreateLevelLinkedList(root *BinaryTreeNode) []*list.List {
 	var result []*list.List
 
@@ -30,7 +29,6 @@ func CreateLevelLinkedList(root *BinaryTreeNode) []*list.List {
 			}
 		}
 	}
-
 
 	return result
 }

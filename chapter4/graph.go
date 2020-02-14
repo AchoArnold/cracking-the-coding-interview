@@ -5,13 +5,13 @@ type Graph struct {
 }
 
 type GraphNode struct {
-	Value interface{}
+	Value    interface{}
 	Children []interface{}
 }
 
-func StringToInterfaceSlice(array []string) []interface{}{
+func StringToInterfaceSlice(array []string) []interface{} {
 	result := make([]interface{}, len(array))
-	for index, value := range array  {
+	for index, value := range array {
 		result[index] = value
 	}
 
@@ -20,7 +20,7 @@ func StringToInterfaceSlice(array []string) []interface{}{
 
 func IntToInterfaceSlice(array []int) []interface{} {
 	result := make([]interface{}, len(array))
-	for index, value := range array  {
+	for index, value := range array {
 		result[index] = value
 	}
 	return result

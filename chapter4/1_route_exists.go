@@ -12,7 +12,7 @@ func (graph *Graph) RouteExists(start string, end string) bool {
 	queue := list.New()
 	queue.PushBack(root)
 
-	for queue.Len() != 0  {
+	for queue.Len() != 0 {
 		root := queue.Remove(queue.Back()).(GraphNode)
 		visitedNodes[root.Value] = true
 
@@ -32,8 +32,8 @@ func (graph *Graph) RouteExists(start string, end string) bool {
 	return false
 }
 
-func (graph *Graph) GetNodeFromName(name string) GraphNode  {
-	for _,node := range graph.Nodes  {
+func (graph *Graph) GetNodeFromName(name string) GraphNode {
+	for _, node := range graph.Nodes {
 		if node.Value == name {
 			return node
 		}
