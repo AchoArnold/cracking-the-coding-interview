@@ -2,8 +2,8 @@ package chapter4
 
 import (
 	"container/list"
-	"testing"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestBinaryTreeNode_AllSequences(t *testing.T) {
@@ -21,6 +21,5 @@ func TestBinaryTreeNode_AllSequences(t *testing.T) {
 		res = append(res, inner)
 	}
 
-	assert.Equal(t, [][]interface{}{[]interface{}{2,1,3}, []interface{}{2,3,1}}, res)
-
+	assert.Equal(t, [][]interface{}{[]interface{}{2, 1, 3}, []interface{}{2, 3, 1}}, res)
 }
