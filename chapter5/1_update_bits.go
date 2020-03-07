@@ -1,6 +1,6 @@
 package chapter5
 
-func SetBitsInRange(n, m,i,j int) (result int) {
+func SetBitsInRange(n, m, i, j int) (result int) {
 	// Create a mask to clear bits i through j in n
 	allOnes := ^0
 
@@ -8,7 +8,7 @@ func SetBitsInRange(n, m,i,j int) (result int) {
 	left := allOnes << (j + 1)
 
 	// 1's after position i
-	right := (1 <<  i) -1
+	right := (1 << i) - 1
 
 	// All 1s except for 0s between i and j
 	mask := left | right

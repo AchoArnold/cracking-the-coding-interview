@@ -1,6 +1,6 @@
 package chapter5
 
-func PrintBinaryRepresentationOfFloat(num float32) (result string){
+func PrintBinaryRepresentationOfFloat(num float32) (result string) {
 	if num >= 1 || num <= 0 {
 		return "ERROR"
 	}

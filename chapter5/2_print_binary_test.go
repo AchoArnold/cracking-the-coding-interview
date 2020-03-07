@@ -2,17 +2,16 @@ package chapter5
 
 import (
 	"fmt"
-	"testing"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
-
 func TestPrintBinaryRepresentationOfFloat(t *testing.T) {
-	inputOutput := map[float32]string {
-		0.625 : "0.101",
+	inputOutput := map[float32]string{
+		0.625:       "0.101",
 		0.999999999: "ERROR",
-		-1 : "ERROR",
-		10 : "ERROR",
+		-1:          "ERROR",
+		10:          "ERROR",
 	}
 
 	for input, output := range inputOutput {
