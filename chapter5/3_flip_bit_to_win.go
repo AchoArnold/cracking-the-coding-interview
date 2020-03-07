@@ -4,8 +4,7 @@ import "math"
 
 func LongestSequenceBruteForce(num int) (result int) {
 	if num == -1 {
-		var num int = 1
-		return int(byte(num) * 8)
+		return int(int(byte(1)) * 8)
 	}
 
 	sequences := getAlternatingSequences(num)
@@ -22,11 +21,11 @@ func FlipBit(num int) (result int) {
 	maxLength := 1
 
 	for num != 0 {
-		if (num & 1) == 0 {
+		if (num & 1) == 1 {
 			currentLength++
 		} else if (num & 1) == 0 {
 			previousLength = 0
-			if (num & 2) == 0 {
+			if (num & 2) != 0 {
 				previousLength = currentLength
 			}
 
