@@ -2,6 +2,7 @@ package util
 
 import (
 	"fmt"
+	"strconv"
 	"testing"
 )
 
@@ -43,4 +44,22 @@ func printMatrix(inputMatrix [][]int) string {
 	}
 
 	return outputString
+}
+
+func printArray(array []int) string {
+	result := "{"
+	for _, val := range array {
+		result += strconv.Itoa(val) + ", "
+	}
+
+	return result + "}"
+}
+
+func printMultiDimensionalArray(array [][]int) string {
+	result := "{\n"
+	for _, val := range array {
+		result += "\t" + printArray(val) + ",\n"
+	}
+
+	return result + "}"
 }
