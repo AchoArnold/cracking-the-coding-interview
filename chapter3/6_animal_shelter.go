@@ -10,7 +10,7 @@ type Shelter struct {
 }
 
 type AnimalNode struct {
-	Type string
+	Type  string
 	Value int
 }
 
@@ -26,7 +26,7 @@ func (shelter *Shelter) Enqueue(node AnimalNode) {
 }
 
 func (shelter *Shelter) IsEmpty() bool {
-	return shelter == nil || *shelter  == Shelter{} || shelter.Inventory.Front() == nil
+	return shelter == nil || *shelter == Shelter{} || shelter.Inventory.Front() == nil
 }
 
 func (shelter *Shelter) DequeueAny() (AnimalNode, error) {
@@ -40,7 +40,7 @@ func (shelter *Shelter) DequeueAny() (AnimalNode, error) {
 	return element.Value.(AnimalNode), nil
 }
 
-func (shelter *Shelter) DequeueDog() (AnimalNode, error)  {
+func (shelter *Shelter) DequeueDog() (AnimalNode, error) {
 	if shelter.IsEmpty() {
 		return AnimalNode{}, errors.New("cannot dequeue from an empty list")
 	}
@@ -58,7 +58,7 @@ func (shelter *Shelter) DequeueDog() (AnimalNode, error)  {
 	return AnimalNode{}, errors.New("there is no dog in the list")
 }
 
-func (shelter *Shelter) DequeueCat() (AnimalNode, error)  {
+func (shelter *Shelter) DequeueCat() (AnimalNode, error) {
 	if shelter.IsEmpty() {
 		return AnimalNode{}, errors.New("cannot dequeue from an empty list")
 	}

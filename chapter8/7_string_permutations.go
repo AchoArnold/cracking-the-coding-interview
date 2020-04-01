@@ -26,13 +26,11 @@ func insertChar(char int32, charArray []string) []string {
 		for index, _ := range word {
 			result = append(result, insertCharAt(word, char, index))
 		}
-		result = append(result, word + string(char))
+		result = append(result, word+string(char))
 	}
 
 	return result
 }
-
-
 
 func insertCharAt(word string, char int32, index int) string {
 	start := word[0:index]

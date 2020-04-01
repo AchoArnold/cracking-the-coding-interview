@@ -1,20 +1,21 @@
 package main
 
 import (
-	util "github.com/AchoArnold/cracking-the-coding-interview/utils"
 	"testing"
+
+	util "github.com/AchoArnold/cracking-the-coding-interview/utils"
 )
 
 func TestOneAway(t *testing.T) {
-	testData :=[]struct {
+	testData := []struct {
 		string1, string2 string
-		expectedResult bool
+		expectedResult   bool
 	}{
-		{"pale", "ple", true,},
-		{"pales", "pale", true,},
-		{"pale", "bale", true,},
-		{"pale", "bake", false,},
-		{"paless", "pale", false,},
+		{"pale", "ple", true},
+		{"pales", "pale", true},
+		{"pale", "bale", true},
+		{"pale", "bake", false},
+		{"paless", "pale", false},
 		{"abcd", "abcd", true},
 		{"abcd", "abdc", true},
 		{"abcc", "ccbb", false},

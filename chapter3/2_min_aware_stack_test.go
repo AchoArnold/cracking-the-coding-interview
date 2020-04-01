@@ -1,13 +1,14 @@
 package chapter3
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestMinAwareStack_Pop(t *testing.T) {
 	top := &StackNode{4, &StackNode{5, nil}}
-	stack := MinAwareStack{top, &Stack{&StackNode{4, &StackNode{4,nil}}}}
+	stack := MinAwareStack{top, &Stack{&StackNode{4, &StackNode{4, nil}}}}
 
 	t.Run("Test the stack returns the element at the top of the stack", func(t *testing.T) {
 		element, _ := stack.Pop()
@@ -25,7 +26,7 @@ func TestMinAwareStack_Pop(t *testing.T) {
 
 func TestMinAwareStack_IsEmpty(t *testing.T) {
 	top := &StackNode{4, &StackNode{5, nil}}
-	stack := MinAwareStack{top, &Stack{&StackNode{4, &StackNode{4,nil}}}}
+	stack := MinAwareStack{top, &Stack{&StackNode{4, &StackNode{4, nil}}}}
 
 	t.Run("IsEmpty returns false when the stack is not empty", func(t *testing.T) {
 		assert.Equal(t, false, stack.IsEmpty())
@@ -51,17 +52,17 @@ func TestMinAwareStack_Peek(t *testing.T) {
 	stack := MinAwareStack{top, &Stack{&StackNode{4, nil}}}
 
 	t.Run("Peek returns the last element in the stack without removing it", func(t *testing.T) {
-		element,_ := stack.Peek()
+		element, _ := stack.Peek()
 		assert.Equal(t, 4, element)
 
-		element,_ = stack.Pop()
+		element, _ = stack.Pop()
 		assert.Equal(t, 4, element)
 	})
 
 	t.Run("Peek returns an error if the stack is empty", func(t *testing.T) {
-		_,err := stack.Peek()
+		_, err := stack.Peek()
 		assert.NotEqual(t, nil, err)
-		assert.Equal(t,"cannot peak an empty stack", err.Error())
+		assert.Equal(t, "cannot peak an empty stack", err.Error())
 	})
 }
 
@@ -97,7 +98,7 @@ func TestMinAwareStack_Min(t *testing.T) {
 		stack.Push(2)
 		stack.Push(0)
 
-		_,_ = stack.Pop()
+		_, _ = stack.Pop()
 
 		min, err := stack.Min()
 

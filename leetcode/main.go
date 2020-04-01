@@ -24,7 +24,7 @@ func simplifyPath(path string) string {
 
 		if nextPath == ".." {
 			if len(paths) > 0 {
-				paths = paths[0: len(paths) -1]
+				paths = paths[0 : len(paths)-1]
 			}
 		} else if nextPath != "." && nextPath != "" {
 			paths = append(paths, nextPath)
@@ -38,14 +38,14 @@ func simplifyPath(path string) string {
 	}
 
 	result := ""
-	for _, val  := range paths {
+	for _, val := range paths {
 		result += "/" + val
 	}
 
 	return result
 }
 
-func getNextPath(path string, start int) (res string){
+func getNextPath(path string, start int) (res string) {
 	temp := path[start:]
 	result := ""
 	for _, char := range temp {
@@ -70,8 +70,8 @@ func InsertLevelOrder(array []interface{}, i int) *TreeNode {
 		Right: nil,
 	}
 
-	node.Left = InsertLevelOrder(array, 2 *i + 1)
-	node.Right = InsertLevelOrder(array, 2* i + 2)
+	node.Left = InsertLevelOrder(array, 2*i+1)
+	node.Right = InsertLevelOrder(array, 2*i+2)
 
 	return node
 }
@@ -100,7 +100,7 @@ func isCousins(root *TreeNode, x int, y int) bool {
 	nodes := []*TreeNode{root}
 
 	for len(nodes) != 0 {
-		var	newQueue []*TreeNode
+		var newQueue []*TreeNode
 		xFound := false
 		yFound := false
 

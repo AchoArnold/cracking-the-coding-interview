@@ -2,8 +2,9 @@ package chapter4
 
 import (
 	//"fmt"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestBinaryTreeNode_ContainsTree(t *testing.T) {

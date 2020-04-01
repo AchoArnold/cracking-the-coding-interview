@@ -15,7 +15,7 @@ func IfThenElse(condition bool, a interface{}, b interface{}) interface{} {
 }
 
 func PrintMatrixToStdOut(inputMatrix [][]int) {
-	for rowIndex := 0; rowIndex < len(inputMatrix); rowIndex++{
+	for rowIndex := 0; rowIndex < len(inputMatrix); rowIndex++ {
 		print("{")
 		for columnIndex := 0; columnIndex < len(inputMatrix[rowIndex]); columnIndex++ {
 			fmt.Printf("%d,", inputMatrix[rowIndex][columnIndex])
@@ -35,7 +35,7 @@ func HandleError(expectedMatrix [][]int, actualMatrix [][]int, t *testing.T) {
 func printMatrix(inputMatrix [][]int) string {
 	outputString := ""
 
-	for rowIndex := 0; rowIndex < len(inputMatrix); rowIndex++{
+	for rowIndex := 0; rowIndex < len(inputMatrix); rowIndex++ {
 		outputString += "{"
 		for columnIndex := 0; columnIndex < len(inputMatrix[rowIndex]); columnIndex++ {
 			outputString += fmt.Sprintf("%d,", inputMatrix[rowIndex][columnIndex])

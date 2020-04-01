@@ -1,8 +1,9 @@
 package chapter8
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 var invalidSet = []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}

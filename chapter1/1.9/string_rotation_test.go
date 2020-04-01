@@ -2,18 +2,19 @@ package main
 
 import (
 	"testing"
+
 	util "github.com/AchoArnold/cracking-the-coding-interview/utils"
 )
 
 func TestIsStringRotation(t *testing.T) {
-	inputOutput := [] struct{
-		input1 string
-		input2 string
+	inputOutput := []struct {
+		input1         string
+		input2         string
 		expectedOutput bool
-	} {
-		{"waterbottle", "erbottlewat", true,},
-		{"hellomynameis", "nameishellomy", true,},
-		{"2", "", false,},
+	}{
+		{"waterbottle", "erbottlewat", true},
+		{"hellomynameis", "nameishellomy", true},
+		{"2", "", false},
 	}
 
 	for _, data := range inputOutput {
@@ -30,4 +31,3 @@ func TestIsStringRotation(t *testing.T) {
 		})
 	}
 }
-

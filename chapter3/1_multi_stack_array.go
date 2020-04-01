@@ -8,7 +8,7 @@ import (
 // We assume the 3 stacks of length = 4 each
 type MultiArrayStack struct {
 	stackIndexes [3]int
-	stack [12]int
+	stack        [12]int
 }
 
 const index0 = 0
@@ -31,16 +31,15 @@ func (stack *MultiArrayStack) Pop(stackIndex int) (int, error) {
 		return -1, errors.New(fmt.Sprintf("Cannot pop from stack %d because it is empty", stackIndex))
 	}
 
-	value := stack.stack[stack.stackIndexes[stackIndex] - 1]
+	value := stack.stack[stack.stackIndexes[stackIndex]-1]
 	stack.stackIndexes[stackIndex]--
 	return value, nil
 }
 
-
 func (stack *MultiArrayStack) Push(stackIndex int, data int) error {
 	stack.AssertStackIndexIsWithinRange(stackIndex)
 
-	if stack.stackIndexes[stackIndex] == getDefaultIndexes()[stackIndex] + 4 {
+	if stack.stackIndexes[stackIndex] == getDefaultIndexes()[stackIndex]+4 {
 		return errors.New(fmt.Sprintf("Cannot push into stack %d because it is full", stackIndex))
 	}
 

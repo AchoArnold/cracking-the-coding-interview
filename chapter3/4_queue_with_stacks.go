@@ -9,7 +9,6 @@ type QueueUsingStacks struct {
 	old *Stack
 }
 
-
 func (queue *QueueUsingStacks) Add(data int) {
 	if queue.IsEmpty() {
 		queue.new = &Stack{nil}
@@ -27,18 +26,18 @@ func (queue *QueueUsingStacks) Remove() (int, error) {
 	}
 
 	queue.old = &Stack{nil}
-	for  {
+	for {
 		val, err := queue.new.Pop()
-		if err != nil  {
+		if err != nil {
 			break
 		}
 		queue.old.Push(val)
 	}
 
-	val,_ := queue.old.Pop()
+	val, _ := queue.old.Pop()
 
 	queue.new = &Stack{nil}
-	for  {
+	for {
 		val, err := queue.old.Pop()
 		if err != nil {
 			break
@@ -50,25 +49,24 @@ func (queue *QueueUsingStacks) Remove() (int, error) {
 	return val, nil
 }
 
-
 func (queue *QueueUsingStacks) Peek() (int, error) {
 	if queue.IsEmpty() {
 		return -1, errors.New("cannot peek from an empty queue")
 	}
 
 	queue.old = &Stack{nil}
-	for  {
+	for {
 		val, err := queue.new.Pop()
-		if err != nil  {
+		if err != nil {
 			break
 		}
 		queue.old.Push(val)
 	}
 
-	val,_ := queue.old.Peek()
+	val, _ := queue.old.Peek()
 
 	queue.new = &Stack{nil}
-	for  {
+	for {
 		val, err := queue.old.Pop()
 		if err != nil {
 			break

@@ -41,10 +41,10 @@ func (stack *Stack) Peek() (int, error) {
 	return stack.top.data, nil
 }
 
-func (stack *Stack) Empty()  {
+func (stack *Stack) Empty() {
 	for {
 		_, err := stack.Pop()
-		if err!= nil {
+		if err != nil {
 			break
 		}
 	}
@@ -58,7 +58,7 @@ func (stack *Stack) ToArray() []int {
 
 	node := stack.top
 
-	for node != nil  {
+	for node != nil {
 		array = append(array, node.data)
 		node = node.next
 	}

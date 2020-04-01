@@ -1,8 +1,9 @@
 package chapter4
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestBinaryTreeNode_CountPathsWithSum(t *testing.T) {

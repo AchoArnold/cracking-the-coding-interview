@@ -1,9 +1,10 @@
 package chapter2
 
 import (
-	"github.com/stretchr/testify/assert"
 	"strconv"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestIntersection(t *testing.T) {

@@ -1,8 +1,9 @@
 package chapter3
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestStack_Pop(t *testing.T) {
@@ -45,15 +46,15 @@ func TestStack_Peek(t *testing.T) {
 	stack := Stack{&StackNode{3, nil}}
 
 	t.Run("Peek returns the last element in the stack without removing it", func(t *testing.T) {
-		element,_ := stack.Peek()
+		element, _ := stack.Peek()
 		assert.Equal(t, 3, element)
 
-		element,_ = stack.Pop()
+		element, _ = stack.Pop()
 		assert.Equal(t, 3, element)
 	})
 
 	t.Run("Peek returns an error if the stack is empty", func(t *testing.T) {
-		_,err := stack.Peek()
-		assert.Equal(t,"cannot peak an empty stack", err.Error())
+		_, err := stack.Peek()
+		assert.Equal(t, "cannot peak an empty stack", err.Error())
 	})
 }

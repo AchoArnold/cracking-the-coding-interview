@@ -5,7 +5,7 @@ func URLify(inputString string, length int) string {
 	replace := "%20"
 	output := ""
 
-	for index,character := range inputString{
+	for index, character := range inputString {
 		if index == length {
 			break
 		}

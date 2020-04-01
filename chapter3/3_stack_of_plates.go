@@ -16,22 +16,21 @@ type NodeStack struct {
 	next *NodeStack
 }
 type LengthAwareStack struct {
-	top *StackNode
+	top    *StackNode
 	length int
 }
-
 
 func (stack *MultiDimensionalStack) Push(data int) {
 	if stack.top == nil {
 		stack.top = &NodeStack{
-			data: &LengthAwareStack{&StackNode{data,nil}, 1},
+			data: &LengthAwareStack{&StackNode{data, nil}, 1},
 			next: nil,
 		}
 	} else {
 		currentStack := stack.top
 		if currentStack.data.length == limit {
 			stack.top = &NodeStack{
-				data: &LengthAwareStack{&StackNode{data, nil},1},
+				data: &LengthAwareStack{&StackNode{data, nil}, 1},
 				next: stack.top,
 			}
 		} else {
@@ -49,7 +48,7 @@ func (stack *MultiDimensionalStack) PopAt(index int) (int, error) {
 	topNode := stack.top
 	counter := 0
 
-	for topNode != nil  {
+	for topNode != nil {
 		if counter == index {
 			val := topNode.data.top.data
 			topNode.data.top = topNode.data.top.next
@@ -69,7 +68,7 @@ func (stack *MultiDimensionalStack) Pop() (int, error) {
 	currentStack := stack.top
 	val := currentStack.data.top.data
 	currentStack.data.top = currentStack.data.top.next
-	currentStack.data.length -=1
+	currentStack.data.length -= 1
 
 	if currentStack.data.length == 0 {
 		stack.top = stack.top.next
@@ -86,7 +85,7 @@ func (stack *MultiDimensionalStack) Print() string {
 	result := ""
 	topNode := stack.top
 
-	for topNode != nil  {
+	for topNode != nil {
 		node := topNode.data.top
 		for node != nil {
 			result += fmt.Sprintf("%d->", node.data)
@@ -99,11 +98,10 @@ func (stack *MultiDimensionalStack) Print() string {
 	return result
 }
 
-func (stack *MultiDimensionalStack) Peek() (int, error)  {
+func (stack *MultiDimensionalStack) Peek() (int, error) {
 	if stack.IsEmpty() {
 		return -1, errors.New("cannot peak an empty stack")
 	}
 
 	return stack.top.data.top.data, nil
 }
-

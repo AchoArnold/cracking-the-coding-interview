@@ -1,8 +1,9 @@
 package chapter3
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestGetNewShelter(t *testing.T) {
@@ -28,7 +29,7 @@ func TestShelter_DequeueAny(t *testing.T) {
 		shelter.Enqueue(AnimalNode{TypeCat, 33})
 		shelter.Enqueue(AnimalNode{TypeDog, 11})
 
-		element,err := shelter.DequeueAny()
+		element, err := shelter.DequeueAny()
 
 		assert.Nil(t, err)
 		assert.True(t, assert.ObjectsAreEqualValues(AnimalNode{TypeDog, 11}, element))
@@ -38,7 +39,7 @@ func TestShelter_DequeueAny(t *testing.T) {
 	t.Run("Dequeue returns an error if the inventory is empty", func(t *testing.T) {
 		shelter := GetNewShelter()
 
-		_,err := shelter.DequeueAny()
+		_, err := shelter.DequeueAny()
 
 		assert.NotNil(t, err)
 	})
@@ -51,7 +52,7 @@ func TestShelter_DequeueDog(t *testing.T) {
 		shelter.Enqueue(AnimalNode{TypeDog, 12})
 		shelter.Enqueue(AnimalNode{TypeCat, 11})
 
-		element,err := shelter.DequeueDog()
+		element, err := shelter.DequeueDog()
 
 		assert.Nil(t, err)
 		assert.True(t, assert.ObjectsAreEqualValues(AnimalNode{TypeDog, 12}, element))
@@ -61,12 +62,11 @@ func TestShelter_DequeueDog(t *testing.T) {
 	t.Run("DequeueDog returns an error if the inventory is empty", func(t *testing.T) {
 		shelter := GetNewShelter()
 
-		_,err := shelter.DequeueDog()
+		_, err := shelter.DequeueDog()
 
 		assert.NotNil(t, err)
 	})
 }
-
 
 func TestShelter_DequeueCat(t *testing.T) {
 	t.Run("DequeueCat removes a dog from the shelter", func(t *testing.T) {
@@ -75,7 +75,7 @@ func TestShelter_DequeueCat(t *testing.T) {
 		shelter.Enqueue(AnimalNode{TypeDog, 12})
 		shelter.Enqueue(AnimalNode{TypeCat, 11})
 
-		element,err := shelter.DequeueCat()
+		element, err := shelter.DequeueCat()
 
 		assert.Nil(t, err)
 		assert.True(t, assert.ObjectsAreEqualValues(AnimalNode{TypeCat, 33}, element))
@@ -85,7 +85,7 @@ func TestShelter_DequeueCat(t *testing.T) {
 	t.Run("DequeueCat returns an error if the inventory is empty", func(t *testing.T) {
 		shelter := GetNewShelter()
 
-		_,err := shelter.DequeueCat()
+		_, err := shelter.DequeueCat()
 
 		assert.NotNil(t, err)
 	})

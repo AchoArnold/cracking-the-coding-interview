@@ -12,14 +12,14 @@ type Tower struct {
 	Index int
 }
 
-func NewTower(index int) *Tower  {
+func NewTower(index int) *Tower {
 	return &Tower{
 		Disks: list.New(),
 		Index: index,
 	}
 }
 
-func (tower *Tower)Add(d int) error {
+func (tower *Tower) Add(d int) error {
 	if tower.Disks.Len() != 0 && tower.Disks.Front().Value.(int) <= d {
 		return errors.New(fmt.Sprintf("Error placing disk %d", d))
 	}
@@ -34,7 +34,7 @@ func (tower *Tower) MoveTopTo(t *Tower) {
 	_ = t.Add(top.(int))
 }
 
-func (tower *Tower) MoveDisks(n int, destination *Tower, buffer *Tower)  {
+func (tower *Tower) MoveDisks(n int, destination *Tower, buffer *Tower) {
 	if n <= 0 {
 		return
 	}
@@ -49,16 +49,15 @@ func (tower *Tower) MoveDisks(n int, destination *Tower, buffer *Tower)  {
 	buffer.MoveDisks(n-1, destination, tower)
 }
 
-
 func SolveForN3() {
-	n:= 3
+	n := 3
 	var towers [3]*Tower
 
-	for i:= 0; i< n-1; i++  {
+	for i := 0; i < n-1; i++ {
 		towers[i] = NewTower(i)
 	}
 
-	for i:= n -1; i >= 0; i-- {
+	for i := n - 1; i >= 0; i-- {
 		err := towers[0].Add(i)
 		if err != nil {
 			log.Fatalf(err.Error())
@@ -67,7 +66,3 @@ func SolveForN3() {
 
 	towers[0].MoveDisks(n, towers[2], towers[1])
 }
-
-
-
-

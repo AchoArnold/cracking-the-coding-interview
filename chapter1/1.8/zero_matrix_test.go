@@ -1,15 +1,15 @@
 package main
 
 import (
-	"testing"
 	"reflect"
+	"testing"
+
 	util "github.com/AchoArnold/cracking-the-coding-interview/utils"
 )
 
-
 func TestZeroMatrix(t *testing.T) {
-	inputOutput := [] struct {
-		input [][]int
+	inputOutput := []struct {
+		input          [][]int
 		expectedOutput [][]int
 	}{
 		{
@@ -50,10 +50,10 @@ func TestZeroMatrix(t *testing.T) {
 		},
 	}
 
-	for _,testData := range inputOutput {
-		t.Run("Testing", func (t *testing.T) {
+	for _, testData := range inputOutput {
+		t.Run("Testing", func(t *testing.T) {
 			if reflect.DeepEqual(zeroMatrix(testData.input), testData.expectedOutput) == false {
-				util.HandleError(testData.expectedOutput, testData.input,t)
+				util.HandleError(testData.expectedOutput, testData.input, t)
 			}
 		})
 	}

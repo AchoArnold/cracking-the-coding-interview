@@ -4,8 +4,8 @@ import "testing"
 
 func TestURLify(t *testing.T) {
 	inputTestData := []struct {
-		inputString string
-		length int
+		inputString    string
+		length         int
 		expectedOutput string
 	}{
 		{
@@ -20,7 +20,7 @@ func TestURLify(t *testing.T) {
 		},
 	}
 
-	for _,testInput := range inputTestData {
+	for _, testInput := range inputTestData {
 		t.Run("Testing that it produces the correct results", func(t *testing.T) {
 			if URLify(testInput.inputString, testInput.length) != testInput.expectedOutput {
 				t.Errorf(

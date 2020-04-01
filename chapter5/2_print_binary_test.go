@@ -2,8 +2,9 @@ package chapter5
 
 import (
 	"fmt"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestPrintBinaryRepresentationOfFloat(t *testing.T) {

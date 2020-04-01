@@ -1,8 +1,9 @@
 package chapter5
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestBitSwapRequired(t *testing.T) {

@@ -2,6 +2,7 @@ package chapter3
 
 import (
 	"testing"
+
 	"github.com/stretchr/testify/assert"
 )
 
@@ -10,10 +11,9 @@ func TestQueueUsingStacks_Add(t *testing.T) {
 	t.Run("Items can be added to an empty queue", func(t *testing.T) {
 		queue.Add(3)
 		queue.Add(4)
-		assert.True(t,true)
+		assert.True(t, true)
 	})
 }
-
 
 func TestQueueUsingStacks_IsEmpty(t *testing.T) {
 	var queue QueueUsingStacks

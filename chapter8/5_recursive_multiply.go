@@ -20,10 +20,10 @@ func recursiveMultiply(n int, m int) int {
 		return m
 	}
 
-	mid := n /2
+	mid := n / 2
 	halProd := recursiveMultiply(mid, m)
 
-	if n % 2 == 0 {
+	if n%2 == 0 {
 		return halProd + halProd
 	}
 
