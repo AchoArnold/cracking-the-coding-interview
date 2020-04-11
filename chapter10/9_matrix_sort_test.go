@@ -13,7 +13,6 @@ func TestFindElementInSortedMatrix(t *testing.T) {
 		{30, 55, 94, 105},
 	}
 
-	println(testMatrix[2][2])
 	t.Run("Testing when there are no duplicates", func(t *testing.T) {
 		result := FindElementInSortedMatrix(testMatrix, 95)
 
