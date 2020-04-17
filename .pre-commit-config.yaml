@@ -5,3 +5,4 @@
     - id: go-lint
     - id: go-imports
     - id: go-cyclo
+    - id: golangci-lint
