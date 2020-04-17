@@ -1,5 +1,6 @@
 package chapter8
 
+// GetPermutations returns all permutations of a string
 func GetPermutations(str string) (result []string) {
 	if len(str) == 0 {
 		return []string{""}
@@ -21,9 +22,9 @@ func GetPermutations(str string) (result []string) {
 }
 
 func insertChar(char int32, charArray []string) []string {
-	result := []string{}
+	var result []string
 	for _, word := range charArray {
-		for index, _ := range word {
+		for index := range word {
 			result = append(result, insertCharAt(word, char, index))
 		}
 		result = append(result, word+string(char))
