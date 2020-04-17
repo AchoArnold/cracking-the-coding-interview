@@ -2,13 +2,11 @@ package chapter15
 
 import (
 	"fmt"
-	"sort"
 	"sync"
 )
 
 // FizzBuzzMultiThread implements the fizzbuzz algorithm in 3 go-routines
 func FizzBuzzMultiThread(n int) {
-	sort.Slice()
 	var fizzWaitGroup sync.WaitGroup
 	var buzzWaitGroup sync.WaitGroup
 	var numWaitGroup sync.WaitGroup

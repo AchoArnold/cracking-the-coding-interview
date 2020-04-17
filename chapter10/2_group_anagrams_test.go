@@ -3,8 +3,6 @@ package chapter10
 import (
 	"reflect"
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 
 func TestGroupAnagrams(t *testing.T) {
@@ -18,5 +16,7 @@ func TestGroupAnagrams(t *testing.T) {
 
 	GroupAnagrams(words)
 
-	assert.True(t, reflect.DeepEqual([]string{"abut", "tuba", "mace", "race", "care"}, words))
+	if !reflect.DeepEqual([]string{"abut", "tuba", "mace", "race", "care"}, words) && !reflect.DeepEqual([]string{"race", "care", "abut", "tuba", "mace"}, words) {
+		t.Errorf("%#+v  is not grouped", words)
+	}
 }
