@@ -61,7 +61,7 @@ func (p *Philosopher) eat(index int) {
 
 func (p *Philosopher) chew() {
 	log.Printf("%s is chewing\n", p.name)
-	time.Sleep(1 * time.Second)
+	time.Sleep(1 * time.Millisecond)
 }
 
 func (p *Philosopher) pickUp() bool {
