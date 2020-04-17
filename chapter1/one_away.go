@@ -1,4 +1,4 @@
-package main
+package chapter1
 
 func oneAway(inputString1 string, inputString2 string) bool {
 	stringAsRune := map[rune]int{}
@@ -13,9 +13,8 @@ func oneAway(inputString1 string, inputString2 string) bool {
 		if _, exists := stringAsRune[character]; !exists {
 			if invalidFound {
 				return false
-			} else {
-				invalidFound = true
 			}
+			invalidFound = true
 		} else {
 			stringAsRune[character]--
 		}
@@ -26,9 +25,8 @@ func oneAway(inputString1 string, inputString2 string) bool {
 		if value != 0 {
 			if value < -1 || value > 1 || invalidFound {
 				return false
-			} else {
-				invalidFound = true
 			}
+			invalidFound = true
 		}
 	}
 

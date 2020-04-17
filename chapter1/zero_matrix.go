@@ -1,4 +1,4 @@
-package main
+package chapter1
 
 func zeroMatrix(matrix [][]int) [][]int {
 	rowSize := len(matrix)

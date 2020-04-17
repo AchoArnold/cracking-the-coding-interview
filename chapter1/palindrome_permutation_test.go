@@ -1,4 +1,4 @@
-package main
+package chapter1
 
 import "testing"
 
@@ -6,7 +6,7 @@ func TestPalindromePermutation(t *testing.T) {
 	testData := map[string]bool{
 		"cdefghmnopqrstuvw":    false,
 		"cdef ghmn opq rstuvw": false,
-		"cdcdcdceeseef":        true,
+		"cdcdcdceeseef":        false,
 		"cd cdcdcdeeeef":       true,
 	}
 

@@ -1,5 +1,6 @@
-package main
+package chapter1
 
+// URLify url encodes a string
 func URLify(inputString string, length int) string {
 	search := " "
 	replace := "%20"

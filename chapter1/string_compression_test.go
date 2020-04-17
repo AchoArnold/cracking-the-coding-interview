@@ -1,4 +1,4 @@
-package main
+package chapter1
 
 import (
 	"testing"

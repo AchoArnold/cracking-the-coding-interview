@@ -1,4 +1,4 @@
-package main
+package chapter1
 
 func rotateMatrix(matrix [][]int) [][]int {
 	matrixSize := len(matrix)
