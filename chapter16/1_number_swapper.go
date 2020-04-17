@@ -6,3 +6,10 @@ func SwapNumbersInPlace(a, b *int) {
 	*a = *b - *a
 	*b = *b - *a
 }
+
+// SwapNumbersInPlaceUsingBitOperations swaps 2 numbers using XOR operations
+func SwapNumbersInPlaceUsingBitOperations(a, b *int) {
+	*a = *a ^ *b
+	*b = *a ^ *b
+	*a = *a ^ *b
+}
