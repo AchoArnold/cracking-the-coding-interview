@@ -8,7 +8,6 @@ import (
 func TestGroupAnagrams(t *testing.T) {
 	words := []string{
 		"abut",
-		"mace",
 		"race",
 		"tuba",
 		"care",
@@ -16,7 +15,7 @@ func TestGroupAnagrams(t *testing.T) {
 
 	GroupAnagrams(words)
 
-	if !reflect.DeepEqual([]string{"abut", "tuba", "mace", "race", "care"}, words) && !reflect.DeepEqual([]string{"race", "care", "abut", "tuba", "mace"}, words) {
+	if !reflect.DeepEqual([]string{"abut", "tuba", "race", "care"}, words) && !reflect.DeepEqual([]string{"race", "care", "abut", "tuba"}, words) {
 		t.Errorf("%#+v  is not grouped", words)
 	}
 }
