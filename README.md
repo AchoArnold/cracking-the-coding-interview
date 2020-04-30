@@ -1,6 +1,3 @@
-# cracking-the-coding-interview
-Cracking the Coding Interview with Golang
-
 Cracking The Coding Interview
 ==================================
 [![Build Status](https://travis-ci.com/AchoArnold/cracking-the-coding-interview.svg?branch=master)](https://travis-ci.com/AchoArnold/cracking-the-coding-interview) 
