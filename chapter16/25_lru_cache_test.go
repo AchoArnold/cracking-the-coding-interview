@@ -1,10 +1,12 @@
 package chapter16
 
 import (
+	"sync"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
 	"syreclabs.com/go/faker"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestNewLRUCache(t *testing.T) {
@@ -14,9 +16,16 @@ func TestNewLRUCache(t *testing.T) {
 func TestLRUCache_SetKeyValue(t *testing.T) {
 	t.Run("Setting in go routines", func(t *testing.T) {
 		c := NewLRUCache(3)
+		var wg sync.WaitGroup
 		for i := 0; i < 100; i++ {
-			go c.SetKeyValue(i, faker.RandomString(faker.RandomInt(0, 100)))
+			wg.Add(1)
+			go func(i int) {
+				c.SetKeyValue(i, faker.RandomString(faker.RandomInt(0, 100)))
+				wg.Done()
+			}(i)
 		}
+
+		wg.Wait()
 
 		assert.Equal(t, 3, len(c.cacheMap))
 	})

@@ -57,20 +57,18 @@ func (cache *LRUCache) removeKey(key int) {
 	if !ok {
 		return
 	}
-	cache.lock.Lock()
 
 	cache.removeFromFrequencyList(element)
 	delete(cache.cacheMap, key)
-
-	cache.lock.Unlock()
 }
 
 // SetKeyValue sets the value into the front of the cache.
 func (cache *LRUCache) SetKeyValue(key int, value string) {
+	cache.lock.Lock()
+
 	// if key is already present, remove it
 	cache.removeKey(key)
 
-	cache.lock.Lock()
 	// if full, remove least recently used item from cache
 	if len(cache.cacheMap) >= cache.maxCacheSize && cache.frequencyList.Back() != nil {
 		cache.removeKey(cache.frequencyList.Back().Value.(*freqListNode).key)
