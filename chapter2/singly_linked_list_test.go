@@ -26,8 +26,8 @@ func TestString(t *testing.T) {
 
 func TestMakeFromSlice(t *testing.T) {
 	slices := [][]int{
-		[]int{1, 2, 3, 5},
-		[]int{1, 2, 4},
+		{1, 2, 3, 5},
+		{1, 2, 4},
 	}
 
 	for _, slice := range slices {
@@ -39,8 +39,8 @@ func TestMakeFromSlice(t *testing.T) {
 
 func TestCount(t *testing.T) {
 	slices := [][]int{
-		[]int{1, 2, 3, 5},
-		[]int{1, 2, 4},
+		{1, 2, 3, 5},
+		{1, 2, 4},
 	}
 
 	for _, slice := range slices {

@@ -22,5 +22,5 @@ func TestBinaryTreeNode_AllSequences(t *testing.T) {
 		res = append(res, inner)
 	}
 
-	assert.Equal(t, [][]interface{}{[]interface{}{2, 1, 3}, []interface{}{2, 3, 1}}, res)
+	assert.Equal(t, [][]interface{}{{2, 1, 3}, {2, 3, 1}}, res)
 }

@@ -20,7 +20,7 @@ func TestMultiArrayStack_Pop(t *testing.T) {
 		})
 	}
 
-	for index, _ := range []int{4, 3, 2} {
+	for index := range []int{4, 3, 2} {
 		t.Run("Test the stack returns an error when the stack is empty", func(t *testing.T) {
 			element, err := stack.Pop(index)
 			assert.Equal(t, element, -1)
@@ -41,14 +41,14 @@ func TestMultiArrayStack_IsEmpty(t *testing.T) {
 		[3]int{1, 5, 9},
 		[12]int{4, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0},
 	}
-	for index, _ := range []int{4, 3, 2} {
+	for index := range []int{4, 3, 2} {
 		t.Run("IsEmpty returns false when the stack is not empty", func(t *testing.T) {
 			assert.Equal(t, false, stack.IsEmpty(index))
 		})
 	}
 
 	stack = *NewMultiArrayStack()
-	for index, _ := range []int{4, 3, 2} {
+	for index := range []int{4, 3, 2} {
 		t.Run("IsEmpty returns true when the stack is empty", func(t *testing.T) {
 			assert.Equal(t, true, stack.IsEmpty(index))
 		})
