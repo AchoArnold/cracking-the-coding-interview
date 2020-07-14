@@ -15,7 +15,7 @@ func TestGetKthMagicNumber(t *testing.T) {
 		{
 			"k is 5",
 			5,
-			81,
+			9,
 		},
 		{
 			"k is 1",
@@ -25,7 +25,7 @@ func TestGetKthMagicNumber(t *testing.T) {
 		{
 			"k is 13",
 			13,
-			531441,
+			63,
 		},
 	}
 

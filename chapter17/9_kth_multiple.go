@@ -21,21 +21,20 @@ func GetKthMagicNumber(k int) int {
 	for i := 0; i < k; i++ {
 		v3 := math.MaxInt32
 		if len(queue3) > 0 {
-			v3 = queue3[len(queue3)-1]
+			v3 = queue3[0]
 		}
 
 		v5 := math.MaxInt32
 		if len(queue5) > 0 {
-			v5 = queue5[len(queue5)-1]
+			v5 = queue5[0]
 		}
 
 		v7 := math.MaxInt32
 		if len(queue7) > 0 {
-			v7 = queue7[len(queue7)-1]
+			v7 = queue7[0]
 		}
 
 		val = int(math.Min(float64(v3), math.Min(float64(v5), float64(v7))))
-
 		if val == v3 { // enqueue into queue 3, 5, 7
 			queue3 = queue3[1:]            // queue.remove()
 			queue3 = append(queue3, 3*val) // append
