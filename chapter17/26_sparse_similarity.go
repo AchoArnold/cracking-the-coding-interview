@@ -1,5 +1,7 @@
 package chapter17
 
+import arithmethic "github.com/NdoleStudio/arithmetic"
+
 // DocPair is a pair of documents
 type DocPair struct {
 	doc1 int
@@ -61,5 +63,5 @@ func computeSimilarity(doc1 Document, doc2 Document) float64 {
 
 	union := doc1.size() + doc2.size() - intersection
 
-	return float64(intersection) / float64(union)
+	return arithmethic.DivideIntsReturnFloat(intersection, union)
 }
